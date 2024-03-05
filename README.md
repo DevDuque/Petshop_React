@@ -1,6 +1,7 @@
 ﻿# Petshop_React
-
+<h1 align="center"> 
 <img src="./public/dog.svg" height="300px" alt="devduque" />
+</h1>
 
 ## Execução da aplicação
 
