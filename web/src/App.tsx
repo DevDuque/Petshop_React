@@ -12,13 +12,13 @@ function App() {
   const handleFormSubmit = (date: Date, smallDogs: number, bigDogs: number) => {
     const { bestShop, totalPrice } = calculatePrice(date, smallDogs, bigDogs);
     setResult({ bestShop, totalPrice });
-    setFormSubmitted(true); // Definindo o enviado
+    setFormSubmitted(true); // Definindo o formulario como enviado
   };
 
   return (
     <div className="App" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
       <InputForm onSubmit={handleFormSubmit} />
-      {formSubmitted && ( // Renderize o <h2> apenas se o formulário foi submetido
+      {formSubmitted && ( // Renderizando o <h2> apenas se o formulário foi submetido
         <h2 style={{ textAlign: 'center', color: '#121212', fontSize: '24px', fontWeight: '800' }}>Melhor petshop: {result.bestShop} Preço Total: R$ {result.totalPrice.toFixed(2)}</h2>
       )}
     </div>

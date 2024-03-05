@@ -9,13 +9,13 @@ const InputForm: React.FC<{ onSubmit: (date: Date, smallDogs: number, bigDogs: n
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Validar se todos os campos estão preenchidos
+        // Validar se todos os campos estão preenchidos corretamente
         if (!date || !smallDogs || !bigDogs || parseInt(smallDogs) <= 0 || parseInt(bigDogs) <= 0) {
             alert('Por favor, preencha todos os campos corretamente.');
             return;
         }
 
-        // Extrair dia, mês e ano da string da data no formato brasileiro (DD-MM-YYYY)
+        // Extrair dia, mês e ano da string da data
         const [day, month, year] = date.split('-').map(Number);
 
         // Criar a data no formato ISO (YYYY-MM-DD)

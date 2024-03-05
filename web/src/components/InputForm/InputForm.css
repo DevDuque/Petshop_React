@@ -1,3 +1,4 @@
+/* Estilização da div ao redor do form */
 .FormContainer {
     display: flex;
     justify-content: center;
@@ -8,6 +9,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/*  Estilização do H1 */
 h1 {
     color: #A7BFDE;
     font-size: 24px;
@@ -17,6 +19,7 @@ h1 {
     font-weight: 800;
 }
 
+/* Estilização do formulário */
 .Form {
     display: flex;
     flex-direction: column;
@@ -29,6 +32,8 @@ h1 {
     background-color: #121212;
 }
 
+
+/* Estilização dos campos do Formulário */
 .DateInput,
 .DogsInput {
     width: 80%;
@@ -43,6 +48,7 @@ h1 {
     margin-top: 20px;
 }
 
+/* Estilização do botão de Submit */
 .Button {
     width: 100%;
     padding: 15px 3%;
@@ -57,6 +63,7 @@ h1 {
     margin-top: 30px;
 }
 
+/* Mudando os Placeholders */
 .FormContainer ::-webkit-input-placeholder {
     font-size: 20px;
     color: #A7BFDE;

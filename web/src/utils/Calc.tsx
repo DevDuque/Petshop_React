@@ -1,4 +1,4 @@
-// Calcular do PetShop Meu CaninoFeliz
+// Calcula do PetShop MeuCaninoFeliz
 export const calculatePriceMeuCaninoFeliz = (date: Date, smallDogs: number, bigDogs: number): number => {
     const dayOfWeek = date.getDay();
     const isWeekend = dayOfWeek === 0 || dayOfWeek === 6; // Verifica se é fim de semana
@@ -9,7 +9,7 @@ export const calculatePriceMeuCaninoFeliz = (date: Date, smallDogs: number, bigD
     return (smallDogPrice * smallDogs) + (bigDogPrice * bigDogs);
 };
 
-// Calcular do PetShop Vai Rex
+// Calcula do PetShop VaiRex
 export const calculatePriceVaiRex = (date: Date, smallDogs: number, bigDogs: number): number => {
     const dayOfWeek = date.getDay();
     const isWeekend = dayOfWeek === 0 || dayOfWeek === 6; // Verifica se é fim de semana
@@ -20,12 +20,12 @@ export const calculatePriceVaiRex = (date: Date, smallDogs: number, bigDogs: num
     return (smallDogPrice * smallDogs) + (bigDogPrice * bigDogs);
 };
   
-// Calcular do PetShop ChowChawgas
+// Calcula do PetShop ChowChawgas
 export const calculatePriceChowChawgas = (date: Date, smallDogs: number, bigDogs: number): number => {
     return 30 * smallDogs + 45 * bigDogs;
 };
 
-// Calcular preços como um todo
+// Calcula preços como um todo
 export const calculatePrice = (date: Date, smallDogs: number, bigDogs: number) => {
     // Preços dos banhos em cada petshop
     const meuCaninoFelizPrice = calculatePriceMeuCaninoFeliz(date, smallDogs, bigDogs);
@@ -37,11 +37,11 @@ export const calculatePrice = (date: Date, smallDogs: number, bigDogs: number) =
     const distanceToVaiRex = 1.7;
     const distanceToChowChawgas = 0.8;
 
-    // Calcular o preço mínimo e o petshop correspondente
+    // Calcula o preço mínimo e o petshop correspondente
     let bestShop = "";
     let minPrice = Number.MAX_SAFE_INTEGER;
 
-    // Verificar o preço mínimo
+    // Verifica o preço mínimo
     if (meuCaninoFelizPrice < minPrice) {
         bestShop = "Meu Canino Feliz";
         minPrice = meuCaninoFelizPrice;
@@ -57,7 +57,7 @@ export const calculatePrice = (date: Date, smallDogs: number, bigDogs: number) =
         minPrice = chowChawgasPrice;
     }
 
-    // Verificar se há empate nos preços mínimos e considerar a distância
+    // Verifica se há empate nos preços mínimos e considerar a distância
     if (meuCaninoFelizPrice === minPrice && distanceToMeuCaninoFeliz <= distanceToVaiRex && distanceToMeuCaninoFeliz <= distanceToChowChawgas) {
         bestShop = "Meu Canino Feliz";
     } else if (vaiRexPrice === minPrice && distanceToVaiRex <= distanceToMeuCaninoFeliz && distanceToVaiRex <= distanceToChowChawgas) {
@@ -65,7 +65,5 @@ export const calculatePrice = (date: Date, smallDogs: number, bigDogs: number) =
     } else if (chowChawgasPrice === minPrice && distanceToChowChawgas <= distanceToMeuCaninoFeliz && distanceToChowChawgas <= distanceToVaiRex) {
         bestShop = "ChowChawgas";
     }
-
-
     return { bestShop, totalPrice: minPrice };
 };
